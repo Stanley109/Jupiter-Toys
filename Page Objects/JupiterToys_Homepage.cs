@@ -9,6 +9,6 @@ namespace SeleniumWebdriver
 
     //Webelements
         //banner elements
-        public By Banner_Contact => By.XPath("//*[@id='nav-contact']/a");
+        public By Banner_Contact = By.XPath("//*[@id='nav-contact']/a");
     }
 }

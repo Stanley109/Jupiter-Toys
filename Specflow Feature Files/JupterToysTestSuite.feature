@@ -1,23 +1,34 @@
+@all
 Feature: Jupiter Toys Tests
-Background: Background name
+Background: Jupiter Toys verification tests for multiple pages
 
-Scenario: TC01: Verify that error messages is displayed
+@tc1
+Scenario: TC01: Verify that error messages for the mandatory fields in the cart page are displayed
     Given I am in the Jupiter Toys home page
-	When I visit the contact page and click the submit button
+	When I visit the contact page 
+	And I click the submit button
 	Then I should be able to see the error messages in each missing mandatory fields
-	When I populate the mandatory fields and click the submit button
+	When I populate the mandatory fields
 	|Forename	|Email				|Message				|
 	|Test		|Test@planit.com	|Hello World!			|
 	Then the error message in the contact page form should disappear
-	And a confirmation message should display
+@tc2
+Scenario Outline: TC02: Verify that a successful message is displayed upon correct submission of the form in the cart page
 
-# 1.	From the home page go to contact page
-# 2.	Click submit button
-# 3.	Verify error messages
-# 4.	Populate mandatory fields
-# 5.	Validate errors are gone
+	Given I am in the Jupiter Toys home page
+	When I visit the contact page
+	And I populate all the mandatory fields with <Forename>, <Email>, and <Message>
+	When I click the submit button
+	Then a submit feedback alert message should display
+	And a confirmation message should display with the Forename '<Forename>' after the feedback alert message disappears
 
-# Test case 2:
+	Examples:
+		| Forename | Email 				  | Message  |
+		| Tester1  | Tester1@jupiter.com  | Hello 1!  |
+		| Tester2  | Tester2@jupiter.com  | Hello 2!  |
+		| Tester3  | Tester3@jupiter.com  | Hello 3!  |
+		| Tester4  | Tester4@jupiter.com  | Hello 4!  |
+		| Tester5  | Tester5@jupiter.com  | Hello 5!  |
 
 # 1.	From the home page go to contact page
 # 2.	Populate mandatory fields

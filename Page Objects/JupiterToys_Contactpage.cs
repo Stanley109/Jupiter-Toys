@@ -23,6 +23,9 @@ namespace SeleniumWebdriver
 
         //success texts
         public By TextSuccess_Message = By.XPath("//*[contains(@class,'alert alert-success')]");
+
+        //submit feedback alert message
+        public By Alert_SendingFeedback_Message = By.XPath("//*[contains(text(),'Sending Feedback')]");
         
     }
 }

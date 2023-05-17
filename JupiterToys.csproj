@@ -3,7 +3,6 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <!-- <GenerateProgramFile>false</GenerateProgramFile> -->
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="NUnit3TestAdapter" Version="4.0.0"/>
@@ -14,5 +13,6 @@
     <PackageReference Include="WebDriver.ChromeDriver" Version="*"/>
     <PackageReference Include="WebDriverManager" Version="2.16.0"/>
     <PackageReference Include="ExtentReports.Core" Version="1.0.3"/>
+    <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0"/>
   </ItemGroup>
 </Project>

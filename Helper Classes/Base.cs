@@ -4,9 +4,12 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.UI;
 using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 using WebDriverManager.Helpers;
+
+
 
 namespace SeleniumWebdriver
 {	
@@ -15,6 +18,9 @@ namespace SeleniumWebdriver
 		public static string BasePath = Directory.GetCurrentDirectory().Substring(0,Directory.GetCurrentDirectory().Length-new string("\\bin\\Debug\\net7.0\\").Length+1);
 		public static IWebDriver WebDriver=null!;
 
+		public const int ImplicitWaitSeconds = 10;
+		public const int ExplicitWaitSeconds = 15;
+
 		public static void SetupBrowser()
 		{
 		    new DriverManager(Base.BasePath).SetUpDriver(new ChromeConfig(),VersionResolveStrategy.MatchingBrowser);
@@ -22,7 +28,8 @@ namespace SeleniumWebdriver
 			options.AddArgument("--start-maximized");
        		options.AddArgument("--disable-notifications");
             WebDriver = new ChromeDriver(options);
-			WebDriver.Manage().Timeouts().ImplicitWait= TimeSpan.FromSeconds(3);
+			WebDriver.Manage().Timeouts().ImplicitWait= TimeSpan.FromSeconds(ImplicitWaitSeconds);
+			WebDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(10);
 		}
 
 		public static void ImplicitlyWait(int sec)
@@ -30,9 +37,26 @@ namespace SeleniumWebdriver
 			WebDriver.Manage().Timeouts().ImplicitWait= TimeSpan.FromSeconds(sec);
 		}
 
+		public static Boolean ExplicitlyWaitForElementToDisappear(By element)
+		{
+			try
+			{	
+				ImplicitlyWait(0);
+				WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(ExplicitWaitSeconds));
+				var isHidden = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.InvisibilityOfElementLocated(element));
+				ImplicitlyWait(ImplicitWaitSeconds);
+           		return isHidden; 
+			}
+			catch
+			{
+				return false;
+			}
+			
+		}
+
 		public static void Delay(int sec)
 		{
-			Thread.Sleep(sec);
+			Thread.Sleep(TimeSpan.FromSeconds(sec));
 		}
 
 		public static void GoToURL(string url)
@@ -53,9 +77,9 @@ namespace SeleniumWebdriver
 				action.MoveToElement(WebDriver.FindElement(element));
 				action.Perform();
 			}
-			catch(Exception e)
+			catch
 			{
-				Assert.Fail(e.Message);
+				Assert.Fail($"Failed to hover to the element {element.ToString()}");
 			}
 		}
 
@@ -65,9 +89,9 @@ namespace SeleniumWebdriver
 			{
 				WebDriver.FindElement(element).Click();
 			}
-			catch(Exception e)
+			catch
 			{
-				Assert.Fail(e.Message);
+				Assert.Fail($"Failed to click element for {element.ToString()}");
 			}	
 		}
 
@@ -80,9 +104,9 @@ namespace SeleniumWebdriver
 			{
 				return WebDriver.FindElement(element).Text;
 			}
-			catch(Exception e)
+			catch
 			{
-				Assert.Fail(e.Message);
+				Assert.Fail($"Failed to get text for element: {element.ToString()}");
 				return null;
 			}
 		}
@@ -110,10 +134,9 @@ namespace SeleniumWebdriver
 			}
 			catch
 			{
-				Assert.Fail();
+				Assert.Fail($"Failed to send keys for element {element.ToString()}");
 			}
 		}
 
 	}
-	
 }
