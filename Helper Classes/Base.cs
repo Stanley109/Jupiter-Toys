@@ -19,7 +19,7 @@ namespace SeleniumWebdriver
 		public static IWebDriver WebDriver=null!;
 
 		public const int ImplicitWaitSeconds = 10;
-		public const int ExplicitWaitSeconds = 15;
+		public const int ExplicitWaitSeconds = 20;
 
 		public static void SetupBrowser()
 		{
@@ -83,7 +83,7 @@ namespace SeleniumWebdriver
 			}
 		}
 
-		public static void ClickElement(By element)
+		public static void ClickElement(By? element)
 		{
 			try
 			{
@@ -91,7 +91,7 @@ namespace SeleniumWebdriver
 			}
 			catch
 			{
-				Assert.Fail($"Failed to click element for {element.ToString()}");
+				Assert.Fail($"Failed to click element for {element!.ToString()}");
 			}	
 		}
 

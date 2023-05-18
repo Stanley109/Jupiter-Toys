@@ -12,13 +12,12 @@ namespace SeleniumWebdriver
 		public void ThenIshouldbeabletoseetheerrormessagesineachmissingmandatoryfields()
 		{
 			Base.Delay(3);
-			var contactpage = new JupiterToys_Contactpage();
-
+			var contactPage = new JupiterToys_ContactPage();
 			Assert.Multiple(() =>
     		{
-				Assert.IsTrue(Base.ElementIsDisplayed(contactpage.TextError_Forename),"Forename error message is not displayed.");
-				Assert.IsTrue(Base.ElementIsDisplayed(contactpage.TextError_Email),"Email error message is not displayed.");
-				Assert.IsTrue(Base.ElementIsDisplayed(contactpage.TextError_Message),"Message error message is not displayed.");
+				Assert.IsTrue(Base.ElementIsDisplayed(contactPage.TextError_Forename),"Forename error message is not displayed.");
+				Assert.IsTrue(Base.ElementIsDisplayed(contactPage.TextError_Email),"Email error message is not displayed.");
+				Assert.IsTrue(Base.ElementIsDisplayed(contactPage.TextError_Message),"Message error message is not displayed.");
    			});
 		}
 
@@ -26,28 +25,28 @@ namespace SeleniumWebdriver
 		public void WhenIpopulatethemandatoryfields(Table table)
 		{
 			var textfields = table.CreateInstance<Textfields>();
-			var contactpage = new JupiterToys_Contactpage();
-
+			var contactPage = new JupiterToys_ContactPage();
 			Base.Delay(2);
-			Base.SendKeys(contactpage.Textfield_Forename, textfields.Forename);
-			Base.SendKeys(contactpage.Textfield_Email, textfields.Email);
-			Base.SendKeys(contactpage.Textfield_Message, textfields.Message);
+			Base.SendKeys(contactPage.Textfield_Forename, textfields.Forename);
+			Base.SendKeys(contactPage.Textfield_Email, textfields.Email);
+			Base.SendKeys(contactPage.Textfield_Message, textfields.Message);
 			Base.Delay(2);
 		}
 		
 		[Then(@"the error message in the contact page form should disappear")]
 		public void Thentheerrormessageinthecontactpageformshoulddisappear()
 		{	
-			var contactpage = new JupiterToys_Contactpage();
+			var contactPage = new JupiterToys_ContactPage();
 			Base.Delay(2);
 			Assert.Multiple(() =>
     		{
-				Assert.IsTrue(Base.ExplicitlyWaitForElementToDisappear(contactpage.TextError_Forename),"Forename error message is still displayed.");
-				Assert.IsTrue(Base.ExplicitlyWaitForElementToDisappear(contactpage.TextError_Email),"Email error message is still displayed");
-				Assert.IsTrue(Base.ExplicitlyWaitForElementToDisappear(contactpage.TextError_Message),"Message error message is still displayed.");
+				Assert.IsTrue(Base.ExplicitlyWaitForElementToDisappear(contactPage.TextError_Forename),"Forename error message is still displayed.");
+				Assert.IsTrue(Base.ExplicitlyWaitForElementToDisappear(contactPage.TextError_Email),"Email error message is still displayed");
+				Assert.IsTrue(Base.ExplicitlyWaitForElementToDisappear(contactPage.TextError_Message),"Message error message is still displayed.");
    			});
 		}
 	}
+
 	public class Textfields
     {
         public string? Forename {get;set;}

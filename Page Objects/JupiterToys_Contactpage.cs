@@ -3,9 +3,13 @@ using OpenQA.Selenium;
 
 namespace SeleniumWebdriver
 {
-    public class JupiterToys_Contactpage
+    public class JupiterToys_ContactPage: IJupiterToys
     {
-        public const string JupiterToys_Contactpage_URL = "https://jupiter.cloud.planittesting.com/#/contact";
+        public string JupiterToys_Default_Page_URL { get; set; }
+        public JupiterToys_ContactPage()
+        {
+            JupiterToys_Default_Page_URL = "https://jupiter.cloud.planittesting.com/#/contact";
+        }
 
     //Webelements
         //text fields

@@ -52,7 +52,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">5/17/2023 5:28:47 AM</span>
+                    <span class="badge badge-primary">5/18/2023 11:48:12 PM</span>
                 </a>
             </li>
         </ul>
@@ -122,8 +122,8 @@
 											<div class="open-test">
 												<div class="test-detail"> 
 													<p class="name">Jupiter Toys Tests</p> 
-													<p class="duration text-sm">0h:0m:9s+856ms</p> 
-													<span class="datetime">05:28:47 AM</span>
+													<p class="duration text-sm">0h:1m:51s+912ms</p> 
+													<span class="datetime">23:48:12 PM</span>
 												</div>
 											</div>
 											<div class="test-contents d-none">
@@ -131,9 +131,9 @@
 													<div class="p-v-10 d-inline-block">	
 														<div class="info">
 															<h5 class="test-status text-pass">Jupiter Toys Tests</h5>
-															<span class='badge badge-success'>5/17/2023 5:28:47 AM</span>
-															<span class='badge badge-danger'>5/17/2023 5:28:57 AM</span>
-															<span class='badge badge-default'>0h:0m:9s+856ms</span>
+															<span class='badge badge-success'>5/18/2023 11:48:12 PM</span>
+															<span class='badge badge-danger'>5/18/2023 11:50:04 PM</span>
+															<span class='badge badge-default'>0h:1m:51s+912ms</span>
 														</div>
 																											</div>
 												</div>
@@ -143,7 +143,7 @@
 			<div class="card">
 				<div class="card-header" role="tab">
 					<h5 class="card-title">
-						<div class="node">TC01: Verify that error messages is displayed</div>
+						<div class="node">TC01: Verify that error messages for the mandatory fields in the cart page are displayed</div>
 						<div class="status-avatar float-right pass-bg">
 							<i class="fa fa-check text-white"></i>
                         </div>
@@ -161,39 +161,405 @@
 	<tbody>
 			<tr class="event-row">
 				<td><i class="fa fa-check text-pass"></i></td>
-				<td>05:28:47</td>
+				<td>23:48:14</td>
 				<td>
-Given I am in the Jupiter Toys home page									</td>
+Given I visit the Home page									</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-check text-pass"></i></td>
-				<td>05:28:47</td>
+				<td>23:48:16</td>
 				<td>
-When I visit the contact page and click the submit button									</td>
+When I visit the Contact page									</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-check text-pass"></i></td>
-				<td>05:28:47</td>
+				<td>23:48:16</td>
+				<td>
+When I click the Contact page submit button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:48:20</td>
 				<td>
 Then I should be able to see the error messages in each missing mandatory fields									</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-check text-pass"></i></td>
-				<td>05:28:48</td>
+				<td>23:48:24</td>
 				<td>
-When I populate the mandatory fields and click the submit button									</td>
+When I populate the mandatory fields									</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-check text-pass"></i></td>
-				<td>05:28:57</td>
+				<td>23:48:26</td>
 				<td>
 Then the error message in the contact page form should disappear									</td>
 			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">TC02: Verify that a successful message is displayed upon correct submission of the form in the cart page</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
 			<tr class="event-row">
 				<td><i class="fa fa-check text-pass"></i></td>
-				<td>05:28:57</td>
+				<td>23:48:28</td>
 				<td>
-Then a confirmation message should display									</td>
+Given I visit the Home page									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:48:30</td>
+				<td>
+When I visit the Contact page									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:48:34</td>
+				<td>
+When I populate all the mandatory fields with Tester1, Tester1@jupiter.com, and Hello 1!									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:48:34</td>
+				<td>
+When I click the Contact page submit button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:48:34</td>
+				<td>
+Then a submit feedback alert message should display									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:48:44</td>
+				<td>
+Then a confirmation message should display with the Forename 'Tester1' after the feedback alert message disappears									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">TC02: Verify that a successful message is displayed upon correct submission of the form in the cart page</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:48:46</td>
+				<td>
+Given I visit the Home page									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:48:48</td>
+				<td>
+When I visit the Contact page									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:48:52</td>
+				<td>
+When I populate all the mandatory fields with Tester2, Tester2@jupiter.com, and Hello 2!									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:48:52</td>
+				<td>
+When I click the Contact page submit button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:48:52</td>
+				<td>
+Then a submit feedback alert message should display									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:48:56</td>
+				<td>
+Then a confirmation message should display with the Forename 'Tester2' after the feedback alert message disappears									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">TC02: Verify that a successful message is displayed upon correct submission of the form in the cart page</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:48:58</td>
+				<td>
+Given I visit the Home page									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:49:00</td>
+				<td>
+When I visit the Contact page									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:49:04</td>
+				<td>
+When I populate all the mandatory fields with Tester3, Tester3@jupiter.com, and Hello 3!									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:49:04</td>
+				<td>
+When I click the Contact page submit button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:49:04</td>
+				<td>
+Then a submit feedback alert message should display									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:49:08</td>
+				<td>
+Then a confirmation message should display with the Forename 'Tester3' after the feedback alert message disappears									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">TC02: Verify that a successful message is displayed upon correct submission of the form in the cart page</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:49:10</td>
+				<td>
+Given I visit the Home page									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:49:12</td>
+				<td>
+When I visit the Contact page									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:49:16</td>
+				<td>
+When I populate all the mandatory fields with Tester4, Tester4@jupiter.com, and Hello 4!									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:49:16</td>
+				<td>
+When I click the Contact page submit button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:49:16</td>
+				<td>
+Then a submit feedback alert message should display									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:49:20</td>
+				<td>
+Then a confirmation message should display with the Forename 'Tester4' after the feedback alert message disappears									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">TC02: Verify that a successful message is displayed upon correct submission of the form in the cart page</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:49:23</td>
+				<td>
+Given I visit the Home page									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:49:25</td>
+				<td>
+When I visit the Contact page									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:49:29</td>
+				<td>
+When I populate all the mandatory fields with Tester5, Tester5@jupiter.com, and Hello 5!									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:49:29</td>
+				<td>
+When I click the Contact page submit button									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:49:29</td>
+				<td>
+Then a submit feedback alert message should display									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:49:44</td>
+				<td>
+Then a confirmation message should display with the Forename 'Tester5' after the feedback alert message disappears									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">TC03: Verify that the price of each product, subtotal price of each product and total price are displaying correctly</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:49:46</td>
+				<td>
+Given I visit the Home page									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:49:48</td>
+				<td>
+When I visit the Shop page									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:49:59</td>
+				<td>
+When I add the following products									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:50:01</td>
+				<td>
+When I visit the Cart page									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:50:01</td>
+				<td>
+Then I should be able to verify the price of each product									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:50:01</td>
+				<td>
+Then I should be able to verify the subtotal price of each product									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:50:04</td>
+				<td>
+Then I should be able to verify the total price									</td>
 			</tr>
 	</tbody>
 </table>

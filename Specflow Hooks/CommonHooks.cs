@@ -10,6 +10,7 @@ namespace SeleniumWebdriver
         public static void SetupBrowser(FeatureContext context)
         {
             Base.SetupBrowser();
+            Base.GoToURL(new JupiterToys_Menu("Home").JupiterToys_Default_Page_URL);
             ExtentReportsHelper.CreateNewReport();
             ExtentReportsHelper.CreateFeatureReport(context);
         }
